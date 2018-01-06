@@ -1,0 +1,57 @@
+[user]
+  email = zorawar87@gmail.com
+  name = Zorawar Moolenaar
+  signkey = 99DA11B2
+
+[alias]
+  fpush = push --force
+  amend = commit --amend --all
+  sclone = clone --depth=1
+  hreset = reset --hard
+  undocommit = reset HEAD~
+  # Show the diff between the latest commit and the current state
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+[core]
+  autocrlf=false
+  filemode=false
+
+[credential]
+  helper = cache --timeout=300
+
+[color]
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[help]
+	autocorrect = 1
+
+[fetch]
+	prune = true
+[diff]
+	compactionHeuristic = true
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[stash]
+	showPatch = true
+[log]
+	date = relative

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function cl(){ cd "$@" && ls; }
+
+function mc(){ mkdir "$@" && cd "$@"; }
+
+function print(){
+  for var in "$@"
+  do
+    if [ -f "$var" ];then
+      lp "$var"
+    else
+      echo "$var is an invalid file. Not Printing."
+    fi
+  done
+}
+
+function swiper(){
+  echo `find . -type f -regex '.*.swp$'`                                                                                                                       
+  find . -type f -regex '.*.swp$' -delete
+  echo deleted
+}
+
+function vj(){
+  for var in "$@"
+  do
+    if [ -f "$var" ];then
+      vim "$var"; astyle *.java; javac *.java
+    else
+      echo "$var doesn't exist."
+    fi
+  done
+}
+
+function vc(){
+  for var in "$@"
+  do
+    if [ -f "$var" ];then
+      vim "$var"; astyle *.c; gcc "$var" 
+    else
+      echo "$var doesn't exist."
+    fi
+  done
+}
