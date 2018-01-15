@@ -1,2 +1,5 @@
-# creates an empty undodir bc git won't pick up the empty dir
+#!/bin/bash
+
+cp -r .aliases .bash_profile .bashrc .functions .gitconfig .inputrc .vim/ .vimrc ~
 mkdir ~/.vim/undodir/
+source ~/.bash_profile
