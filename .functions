@@ -1,7 +1,5 @@
 #!/bin/bash
 
-function cl(){ cd "$@" && ls; }
-
 function mc(){ mkdir "$@" && cd "$@"; }
 
 function print(){
@@ -42,3 +40,45 @@ function vc(){
     fi
   done
 }
+
+# alias volume="pactl set-sink-volume @DEFAULT_SINK@"
+function volume(){
+  if [ $# -ne 1  ]
+  then
+    echo "Usage : volume <0-15>"
+    return
+  fi
+  
+  if (( $1 <= 0 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 0%
+  elif (( $1 <= 1 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 10%
+  elif (( $1 <= 10 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 100%
+  elif (( $1 <= 11 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 110%
+  elif (( $1 <= 12 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 120%
+  elif (( $1 <= 13 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 130%
+  elif (( $1 <= 14 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 140%
+  elif (( $1 <= 15 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 150%
+  elif (( $1 <= 16 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 160%
+  elif (( $1 <= 17 ))
+  then 
+    command pactl set-sink-volume @DEFAULT_SINK@ 170%
+  fi
+}
+

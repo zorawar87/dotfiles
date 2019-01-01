@@ -1,2 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/zm/ct-data/teen-health'
+let g:netrw_dirhist_2='/home/zm/ct-data/hartford-employment-by-tracts/scripts'
+let g:netrw_dirhist_3='/home/zm/repo/ct-data/juvenile-arrests/scripts'
+let g:netrw_dirhist_4='/home/zm/repos/min-edit-distance/valid-input'
+let g:netrw_dirhist_5='/home/zm/Documents/classes/comp-sec/project/truffle5/dSplitwise/contracts'

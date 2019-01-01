@@ -4,8 +4,7 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
-# to get fedora to make GUIs work
-export DISPLAY=:0
+export EDITOR=$(which vim)
 
 ## Enable shell options:
 # ignore minor spelling errors
@@ -20,19 +19,22 @@ shopt -s histappend histreedit histverify
 shopt -s no_empty_cmd_completion
 # case insensitive file matching
 shopt -s nocaseglob
+# autocd when the command is a path
+shopt -s autocd
 
 ## Colours
-export PS1='\[\e[1;36m\]\u\[\e[1;37m\]@\[\e[1;36m\]\h\[\e[00m\]$: '
-#Colours for less
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-#Colours for ls
-export LS_COLORS=$LS_COLORS:'di=0;35:'
+#export PS1='\[\e[1;36m\]\u\[\e[1;37m\]@\[\e[1;36m\]\h\[\e[00m\]$: '
+export PS1='\[\e[1;32m\] \u$>\[\e[00m\] '
+##Colours for less
+#export LESS_TERMCAP_mb=$'\E[01;31m'
+#export LESS_TERMCAP_md=$'\E[01;31m'
+#export LESS_TERMCAP_me=$'\E[0m'
+#export LESS_TERMCAP_se=$'\E[0m'
+#export LESS_TERMCAP_so=$'\E[01;44;33m'
+#export LESS_TERMCAP_ue=$'\E[0m'
+#export LESS_TERMCAP_us=$'\E[01;32m'
+##Colours for ls
+#export LS_COLORS=$LS_COLORS:'di=0;35:'
 
 if [ -f ~/.aliases ]; then
   . ~/.aliases
@@ -45,6 +47,4 @@ fi
 #./.splash.py
 #fortune | cowsay
 
-export JAVA_HOME=/usr/java/jdk1.8.0_151
-export GO_ROOT=/usr/local/go
-PATH=$PATH:$JAVA_HOME/bin:$GOROOT/bin
+export PATH=$PATH:$HOME/go/bin:$HOME/.local/bin

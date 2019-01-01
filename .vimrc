@@ -6,7 +6,7 @@ syntax on
 "colorscheme darkblue
 "colorscheme wwdc16
 set t_Co=256
-colorscheme PaperColor
+"colorscheme PaperColor
 set background=dark "enable dark theme 
 set cursorline
 
@@ -14,15 +14,16 @@ set hlsearch
 set incsearch
 
 set autoindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 set autoread
 set wildmenu
 set number
 set wildignore=*.class,*.~,.*~
-set nowrap
+"set nowrap
+set wrap
 
 command WQ wq
 command Wq wq
